@@ -8,7 +8,7 @@ export default defineConfig({
     // commonjsOptions: {
     //   include: [/node_modules/],
     // },
-    outDir: "../dist/api/public",
+    outDir: "../dist/server/public",
   },
   plugins: [react()],
   server: {
