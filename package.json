@@ -2,12 +2,18 @@
   "name": "express-api-starter-ts",
   "version": "1.2.0",
   "description": " A basic starter for an express.js API with Typescript",
-  "main": "api/index.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
-    "start": "ts-node api/index.ts",
-    "dev": "nodemon api/index.ts",
-    "build": "tsc",
-    "lint": "eslint --fix api test",
+    "start": "ts-node dist/api/index.js",
+    "dev:api": "nodemon api/index.ts",
+    "dev:client": "vite",
+    "build:api": "tsc",
+    "build:client": "vite build",
+    "build": "rm -rf ./dist && yarn build:api && yarn build:client",
+    "lint": "eslint --fix api client test",
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
@@ -32,9 +38,6 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.2.5",
     "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "@typescript-eslint/parser": "^5.59.9",
-    "eslint": "^8.42.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
@@ -43,6 +46,17 @@
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "<5.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }
