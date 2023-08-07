@@ -12,8 +12,14 @@ export default defineConfig({
   },
   plugins: [react()],
   server: {
+    port: 3001,
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": {
+        // target: "http://localhost:3000/api",
+        target: "http://localhost:3000",
+        // secure: false,
+        // changeOrigin: true,
+      },
     },
   },
 });
