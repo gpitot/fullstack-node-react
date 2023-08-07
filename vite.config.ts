@@ -11,4 +11,9 @@ export default defineConfig({
     outDir: "../dist/api/public",
   },
   plugins: [react()],
+  server: {
+    proxy: {
+      "/api": "http://localhost:3000",
+    },
+  },
 });
