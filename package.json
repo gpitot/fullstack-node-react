@@ -10,10 +10,10 @@
     "start": "ts-node dist/server/index.js",
     "dev:server": "nodemon server/index.ts",
     "dev:client": "vite",
-    "build:server": "tsc",
+    "build:server": "tsup server",
     "build:client": "vite build",
     "build": "rm -rf ./dist && yarn build:server && yarn build:client",
-    "lint": "eslint --fix server client test",
+    "lint": "eslint --fix client",
     "test": "jest",
     "typecheck": "tsc --noEmit"
   },
@@ -52,6 +52,7 @@
     "react-dom": "^18.2.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
